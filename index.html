@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Frontend Mentor | Intro Component with Signup Form</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <div id="background">
+        <!--div to contain background image-->
+        <main>
+            <div class="flex-container">
+                <!--for desktop layour-->
+                <section id="intro">
+                    <div id="text">
+                        <p id="heading">Learn to code by watching others</p>
+                        <p id="content">See how experienced developers solve problems in real-time. Watching scripted
+                            tutorials
+                            is great,
+                            but understanding how developers think is invaluable.</p>
+                    </div>
+        
+                    <button type="button" class="cta" id="try-btn">
+                        <span style="font-weight:bold">Try it free 7 days</span> then $20/mo. thereafter
+                    </button>
+                </section>
+
+                <section id="form">
+                    <div id="form-background">
+                        <div id="form-contents" class="form-container">
+                            <form name="signupform" action="#" id="signup" onsubmit="return validateForm()">
+
+                                <!--First Name-->
+                                <label for="fname">
+                                    <span class="error-icon" id="error-1"><img src="images/icon-error.svg"
+                                            alt="Error icon"></span></label><br>
+                                <input type="text" id="fname" name="fname" placeholder="First Name" spellcheck="false"
+                                    autocomplete="off"><br>
+                                <span class="validation-alert" id="fname-alert">Filler-Text</span>
+                                <!--fname = first name-->
+
+                                <!-- Last Name-->
+                                <label for="lname"></label>
+                                <span class="error-icon" id="error-2"><img src="images/icon-error.svg"
+                                        alt="Error icon"></span></label><br>
+                                <input type="text" id="lname" name="lname" placeholder="Last Name" spellcheck="false"
+                                    autocomplete="off"><br>
+                                <span class="validation-alert" id="lname-alert">Filler-Text</span>
+                                <!--lname = last name-->
+
+                                <!--Email-->
+                                <label for="email">
+                                    <span class="error-icon" id="error-3"><img src="images/icon-error.svg"
+                                            alt="Error icon"></span></label><br>
+                                <input type="email" id="email" name="email" placeholder="Email Address"
+                                    spellcheck="false" autocomplete="off"><br>
+                                <span class="validation-alert" id="email-alert">Filler-Text</span>
+                                <!--Password-->
+                                <label for="password">
+                                    <span class="error-icon" id="error-4"><img src="images/icon-error.svg"
+                                            alt="Error icon"></span></label><br>
+                                <input type="password" id="password" name="password" placeholder="Password"
+                                    spellcheck="false" autocomplete="off"><br>
+                                <span class="validation-alert" id="password-alert">Filler-Text</span>
+                                <!--Call to Action Button-->
+                                <button type="submit" class="cta" id="trial-btn">Claim your free trial</button>
+                                <p id="t-c-notice">
+                                    <!--terms and conditions notice-->
+                                    By clicking the button, you are agreeing to our
+                                    <a href="#" id="t-and-s">Terms and Services</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <p class="attribution">
+                Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+                Coded by <a href="#">Daina</a>.
+            </p>
+        </footer>
+</body>
+<script src="./js/script.js"></script>
+
+</html>
