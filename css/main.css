@@ -1,0 +1,469 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+/*mixins*/
+/*function to choose a color from the colors map*/
+/*classes*/
+.error-text::-webkit-input-placeholder {
+  color: #ff7a7a;
+}
+.error-text:-ms-input-placeholder {
+  color: #ff7a7a;
+}
+.error-text::-ms-input-placeholder {
+  color: #ff7a7a;
+}
+.error-text::placeholder {
+  color: #ff7a7a;
+}
+
+/*CSS*/
+html {
+  font-size: 60%;
+  font-family: 'Poppins', 'sans-serif';
+}
+
+body, html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', 'sans-serif';
+  margin: 0;
+  background-color: #ff7a7a;
+  background-image: url(../images/bg-intro-mobile.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+@media (min-width: 840px) {
+  body {
+    background-color: #ff7a7a;
+    background-image: url(../images/bg-intro-mobile.png);
+    background-size: auto;
+    background-repeat: repeat;
+  }
+}
+
+body #heading {
+  color: #ffffff;
+  font-size: 2.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  position: relative;
+  text-align: center;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 20%;
+}
+
+@media (min-width: 768px) and (max-width: 840px) {
+  body #heading {
+    font-size: 4.5rem;
+    position: relative;
+    margin: 0 5% 0 5%;
+  }
+}
+
+@media (min-width: 840px) {
+  body #heading {
+    position: absolute;
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-align: left;
+    padding: 14% 0 0 15%;
+    width: 30%;
+  }
+}
+
+body #content {
+  color: #ffffff;
+  font-size: 16px;
+  padding: 0 10% 0 10%;
+  letter-spacing: 0.1px;
+  text-align: center;
+}
+
+@media (min-width: 840px) {
+  body #content {
+    position: absolute;
+    width: 35%;
+    text-align: left;
+    padding: 25% 15% 0 15%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 840px) {
+  body #content {
+    font-size: 2.8rem;
+  }
+}
+
+.cta {
+  border-radius: 8px;
+}
+
+#try-btn {
+  font-family: 'Poppins';
+  font-weight: 400;
+  font-size: 1.5em;
+  background-color: #6055a5;
+  width: 80%;
+  height: 5.5em;
+  margin: 3em 10% auto 10%;
+  color: #ececec;
+  border: 0px;
+  padding: 0 5em 0 5em;
+  -webkit-box-shadow: 0 0.5em rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.5em rgba(0, 0, 0, 0.2);
+  /*how the element changes when the smaller mobile width is displayed*/
+}
+
+@media (min-width: 840px) {
+  #try-btn {
+    width: 35%;
+    height: 3.5em;
+    position: absolute;
+    left: 45%;
+    top: 13%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 840px) {
+  #try-btn {
+    height: 5em;
+    width: 70%;
+    font-size: 2.6rem;
+    margin-top: 0px;
+    margin-left: 15%;
+  }
+}
+
+@media (max-width: 320px) {
+  #try-btn {
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 280px) {
+  #try-btn {
+    font-size: 1.2em;
+  }
+}
+
+#form-background {
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 80%;
+  margin-top: 3em;
+  margin-left: 10%;
+  margin-right: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 840px) {
+  #form-background {
+    width: 35%;
+    position: absolute;
+    left: 45%;
+    top: 25%;
+    height: 45em;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 840px) {
+  #form-background {
+    margin-top: 4em;
+    height: 65em;
+    width: 70%;
+    margin-left: 15%;
+  }
+}
+
+#form-contents {
+  padding-top: 0.5em;
+}
+
+#form-contents input:focus {
+  border-color: #6055a5;
+  outline: 0;
+}
+
+#form-contents .validation-alert {
+  font-family: 'Poppins';
+  color: #ff7a7a;
+  font-weight: 600;
+  font-size: 9px;
+  font-style: italic;
+  position: absolute;
+  right: 20%;
+}
+
+@media (min-width: 768px) and (max-width: 840px) {
+  #form-contents .validation-alert {
+    margin-right: 0.4em;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 840px) {
+  #form-contents .validation-alert {
+    margin-right: -2em;
+  }
+}
+
+@media (min-width: 540px) {
+  #form-contents {
+    padding-left: 2.2em;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 840px) {
+  #form-contents {
+    margin: 0 0 0 0;
+    padding: 2em 5% 0 5%;
+  }
+}
+
+#fname, #lname, #email, #password {
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: #b9b6d3;
+  width: 75%;
+  height: 3.5em;
+  margin: 0 auto 0 1.8em;
+  color: #3e3c49;
+  padding-left: 2em;
+}
+
+@media (min-width: 414px) {
+  #fname, #lname, #email, #password {
+    margin: 0 auto 0 2em;
+  }
+}
+
+@media (max-width: 360px) {
+  #fname, #lname, #email, #password {
+    margin: 0 auto 0 1.5em;
+  }
+}
+
+@media (max-width: 320px) {
+  #fname, #lname, #email, #password {
+    margin: 0 auto 0 1.3em;
+  }
+}
+
+@media (max-width: 280px) {
+  #fname, #lname, #email, #password {
+    margin: 0 auto 0 1em;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 840px) {
+  #fname, #lname, #email, #password {
+    width: 91%;
+    margin-bottom: 1em;
+    margin-left: auto;
+    height: 4em;
+    font-size: 20px;
+    padding: 0 0 0 2em;
+  }
+}
+
+@media (min-width: 840px) {
+  #fname, #lname, #email, #password {
+    padding: 0 0 0 2em;
+    width: 80%;
+    margin-top: 1em;
+  }
+}
+
+::-webkit-input-placeholder {
+  font-family: 'Poppins';
+  color: gray;
+  opacity: 1;
+  font-weight: 600;
+}
+
+:-ms-input-placeholder {
+  font-family: 'Poppins';
+  color: gray;
+  opacity: 1;
+  font-weight: 600;
+}
+
+::-ms-input-placeholder {
+  font-family: 'Poppins';
+  color: gray;
+  opacity: 1;
+  font-weight: 600;
+}
+
+::placeholder {
+  font-family: 'Poppins';
+  color: gray;
+  opacity: 1;
+  font-weight: 600;
+}
+
+#trial-btn {
+  /*background and positioning*/
+  background-color: #38cc8c;
+  border: 0px;
+  height: 3.8em;
+  width: 85%;
+  border-radius: 5px;
+  padding: 0.5em 1em 0.5em 1em;
+  -webkit-box-shadow: inset 0 -3px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 -3px rgba(0, 0, 0, 0.2);
+  position: relative;
+  left: 2em;
+  top: 1em;
+  /*text*/
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+@media (min-width: 540px) {
+  #trial-btn {
+    padding: 0.5em;
+    width: 60%;
+  }
+}
+
+@media (min-width: 414px) {
+  #trial-btn {
+    margin-left: 0.2em;
+  }
+}
+
+@media (min-width: 411px) {
+  #trial-btn {
+    width: 84.5%;
+    left: 1.9em;
+  }
+}
+
+@media (max-width: 360px) {
+  #trial-btn {
+    left: 1.7em;
+    width: 85.7%;
+  }
+}
+
+@media (max-width: 320px) {
+  #trial-btn {
+    left: 1.4em;
+    width: 87%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 840px) {
+  #trial-btn {
+    top: 0;
+    width: 98%;
+    left: 0;
+    font-size: 20px;
+    height: 3.5em;
+  }
+}
+
+@media (min-width: 840px) {
+  #trial-btn {
+    margin-top: 1em;
+    width: 86%;
+  }
+}
+
+#t-c-notice {
+  color: #b9b6d3;
+  font-size: 10px;
+  text-align: center;
+  padding: 1em 4em 0 4em;
+}
+
+@media (min-width: 768px) and (max-width: 840px) {
+  #t-c-notice {
+    padding-top: 0.2em;
+    font-size: 13px;
+  }
+}
+
+#t-and-s {
+  text-decoration: none;
+  color: #ff7a7a;
+  font-weight: 600;
+}
+
+.attribution {
+  margin-top: 8em;
+  font-size: 8px;
+  text-align: center;
+  color: white;
+}
+
+@media (min-width: 840px) {
+  .attribution {
+    position: absolute;
+    left: 45%;
+    top: 90%;
+  }
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+#trial-btn:hover {
+  background-color: #89e1bb;
+}
+
+#trial-btn:active {
+  background-color: #89e1bb;
+  -webkit-transform: translateY(2px);
+          transform: translateY(2px);
+  -webkit-box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2);
+          box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2);
+}
+
+.error-icon {
+  position: absolute;
+  left: 75%;
+  margin-top: 28px;
+  visibility: hidden;
+}
+
+@media (min-width: 768px) and (max-width: 840px) {
+  .error-icon {
+    left: 75%;
+    margin-top: 45px;
+  }
+}
+
+@media (min-width: 840px) {
+  .error-icon {
+    margin-top: 40px;
+    left: 85%;
+  }
+}
+
+.validation-alert {
+  visibility: hidden;
+}
+
+@media (min-width: 768px) and (max-width: 840px) {
+  .validation-alert {
+    margin-bottom: 20px;
+    margin-top: -20px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

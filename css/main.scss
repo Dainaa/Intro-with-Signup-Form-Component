@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+$colors: (
+    primary-red: hsl(0, 100%, 74%),
+    primary-green: hsl(154, 59%, 51%),
+    primary-green-light:lighten(hsl(154, 59%, 51%),20%),
+    accent: hsl(248, 32%, 49%),
+    neutral-blue:hsl(249, 10%, 26%),
+    neutral-gray-blue:hsl(246, 25%, 77%),
+    shadow-color:rgba(0,0,0,20%)
+);
+
+
+/*mixins*/
+$desktop: 840px;
+$ipad: 768px;
+$surfaceduo: 540px;
+$plus: 414px;
+$pixel: 411px;
+$motog4: 360px; // for MotoG4, Galaxy S5 etc.  //works
+$minimobiles: 320px;
+$galaxyfold: 280px;
+
+
+@mixin desktop{
+    @media (min-width: #{$desktop}){
+    @content;
+    }
+}
+
+@mixin ipad{
+    @media (min-width: 768px) and (max-width:840px){
+    @content;
+    }
+}
+@mixin surfaceduo{
+    @media (min-width: #{$surfaceduo}){
+    @content;
+    }
+}
+@mixin plus{
+    @media (min-width: #{$plus}){
+    @content;
+    }
+}
+
+@mixin pixel{
+    @media (min-width: #{$pixel}){
+    @content;
+    }
+}
+
+@mixin motog4{
+    @media (max-width: #{$motog4}){
+    @content;
+    }
+}
+
+@mixin minimobiles{
+    @media (max-width: #{$minimobiles}){
+    @content;
+    }
+}
+
+
+@mixin galaxyfold{
+    @media (max-width: #{$galaxyfold}){
+    @content;
+    }
+}
+
+
+
+/*function to choose a color from the colors map*/
+@function color($color-name){
+    @return map-get($colors, $color-name )
+}
+
+/*classes*/
+.error-text::placeholder{
+    color: color(primary-red);
+}
+
+
+/*CSS*/
+html{
+    font-size:60%;
+    font-family: 'Poppins', 'sans-serif';
+}
+body, html{
+    height:100%;
+}
+
+body{
+    font-family: 'Poppins', 'sans-serif';
+    margin:0;
+    background-color: #ff7a7a;
+    background-image: url(../images/bg-intro-mobile.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    @include desktop{
+        background-color: #ff7a7a;
+        background-image: url(../images/bg-intro-mobile.png);
+        background-size: auto;
+        background-repeat: repeat;
+        
+    }
+    #heading{
+        color:#ffffff;
+        font-size: 2.6rem;
+        font-weight: 600;
+        letter-spacing: 0.1px;
+        position: relative;
+        text-align: center;
+        padding-left: 20%;
+        padding-right: 20%;
+        padding-top: 20%;
+
+        @include ipad{
+            font-size: 4.5rem;
+            position: relative;
+            margin: 0 5% 0 5%;
+        }
+
+        @include desktop{
+            position: absolute;
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-align: left;
+            padding: 14% 0 0 15%;
+            width: 30%;
+    }
+}
+
+    #content{
+        color:#ffffff;
+        font-size: 16px;
+        padding: 0 10% 0 10%;
+        letter-spacing: 0.1px;
+        text-align: center;
+
+        @include desktop{
+            position: absolute;
+            width:35%;
+            text-align: left;
+            padding:25% 15% 0 15%;
+
+        }
+
+        @include ipad{
+            font-size: 2.8rem;
+        }
+            
+        }
+
+
+    }
+
+    .cta{
+        border-radius:8px;
+    }
+
+    #try-btn{
+        font-family: 'Poppins';
+        font-weight: 400;
+        font-size: 1.5em;
+        background-color: color(accent);
+        width: 80%;
+        height: 5.5em;
+        margin: 3em 10% auto 10%;
+        color:#ececec;
+        border:0px;
+        padding:0 5em 0 5em;
+        box-shadow: 0 0.5em rgba(0,0,0,0.2);
+
+        
+        /*how the element changes when the smaller mobile width is displayed*/
+        @include desktop{
+            width:35%;
+            height:3.5em;
+            position: absolute;
+            left: 45%;
+            top:13%;
+
+        }
+
+        //768px
+        @include ipad{
+            height:5em;
+            width:70%;
+            font-size: 2.6rem;
+            margin-top: 0px;
+            margin-left: 15%;
+        }
+        
+        //320 px
+        @include minimobiles{
+            font-size: 1.3em;
+            
+        }
+
+        //280 px
+        @include galaxyfold{
+            font-size: 1.2em;
+        }
+       
+
+        
+    }
+
+    #form-background{
+        background-color: #ffffff;
+        border-radius: 12px;
+        width:80%;
+        margin-top:3em;
+        margin-left: 10%;
+        margin-right: 10%;
+        display: flex;
+        flex-direction: column;
+        
+        @include desktop{
+            width:35%;
+            position: absolute;
+            left:45%;
+            top: 25%;
+            height:45em;
+        }
+
+        //768px
+        @include ipad{
+            margin-top:4em;
+            height:65em;
+            width:70%;
+            margin-left:15%;
+        }
+
+    }
+
+    #form-contents{
+        padding-top:0.5em;
+
+        input{
+            &:focus{
+                border-color: color(accent);
+                outline: 0;
+            }
+
+   
+        }
+
+        .validation-alert{
+            font-family: 'Poppins';
+            color: color(primary-red);
+            font-weight: 600;
+            font-size: 9px;
+            font-style: italic;
+            position: absolute;
+            right: 20%;
+             //768px
+            @include ipad{
+              margin-right:0.4em;
+              font-size: 14px;
+            }
+            @include desktop{
+                margin-right:-2em;
+            }
+        }
+
+    
+
+        //540px
+        @include surfaceduo{
+            padding-left:2.2em;
+        }
+         //768px
+        @include ipad{
+            margin:0 0 0 0;
+            padding: 2em 5% 0 5%;
+
+        }
+    
+    }
+
+    #fname, #lname, #email, #password{
+        border-radius: 5px;
+        border: 1px solid;
+        border-color: color(neutral-gray-blue);
+        width: 75%;
+        height:3.5em;
+        margin: 0 auto 0 1.8em;
+        color: color(neutral-blue);
+        padding-left: 2em;
+
+        
+        //414px
+        @include plus{
+            margin: 0 auto 0 2em;
+        }
+       
+        //360px
+        @include motog4{
+            margin: 0 auto 0 1.5em;
+        }
+        //320px
+        @include minimobiles{
+            margin: 0 auto 0 1.3em;
+        }
+
+        //280px
+        @include galaxyfold{
+            margin: 0 auto 0 1em;
+        }
+        
+        //768px to 840px
+        @include ipad{   
+            width:91%;
+            margin-bottom:1em;
+            margin-left:auto;
+            height:4em;
+            font-size: 20px;
+            padding: 0 0 0 2em;
+
+        }
+
+        @include desktop{
+            padding: 0 0 0 2em;
+            width:80%;
+            margin-top:1em;
+        }
+
+    
+
+    
+    }
+
+    ::placeholder{
+        font-family: 'Poppins';
+        color:gray;
+        opacity: 1;
+        font-weight: 600;
+    }
+
+    #trial-btn{
+        /*background and positioning*/
+        background-color: color(primary-green);
+        border:0px;
+        height:3.8em;
+        width: 85%;
+        border-radius: 5px;
+        padding: 0.5em 1em 0.5em 1em;
+        box-shadow: inset 0 -3px rgba(0,0,0,0.2);
+
+        position: relative;
+        left:2em;
+        top:1em;
+
+        /*text*/
+        color:#ffffff;
+        text-transform: uppercase;
+        font-size: 12.5px;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+
+     
+
+        //540px
+        @include surfaceduo{
+            padding:0.5em;
+            width: 60%;
+        }
+
+        //414px
+        @include plus{
+            margin-left: 0.2em;
+        }
+
+        //411px
+        @include pixel{
+            width:84.5%;
+            left:1.9em;
+        }
+ 
+        //360px
+        @include motog4{
+            left:1.7em;
+            width: 85.7%;
+        }
+
+        //320px
+        @include minimobiles{
+            left: 1.4em;
+            width: 87%;
+        }
+   
+        //768px
+        @include ipad{
+            top:0;
+            width:98%;
+            left:0;
+            font-size: 20px;
+            height:3.5em;
+
+        }
+
+        @include desktop{
+            margin-top:1em;
+            width:86%;
+
+        }
+   
+    }
+    
+    #t-c-notice{
+        color:color(neutral-gray-blue);
+        font-size: 10px;
+        text-align: center;
+        padding: 1em 4em 0 4em;
+
+
+          //768px
+          @include ipad{
+              padding-top: 0.2em;
+              font-size: 13px;
+        }
+    }
+
+    #t-and-s{
+        text-decoration: none;
+        color:color(primary-red);
+        font-weight: 600;
+    }
+
+    .attribution { margin-top:8em; font-size: 8px; text-align: center; color:white;    
+        @include desktop{
+            position: absolute;
+            left:45%;
+            top:90%;
+        }      
+        }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+
+
+#trial-btn:hover{
+    background-color: color(primary-green-light);
+}
+
+#trial-btn:active{
+    background-color: color(primary-green-light);
+    transform: translateY(2px);
+    box-shadow: inset 0 -1px rgba(0,0,0,0.2);
+}
+
+.error-icon{
+    position: absolute;
+    left:75%;
+    margin-top: 28px;
+
+    visibility: hidden;
+
+    @include ipad{
+        left:75%;
+        margin-top: 45px;
+    }
+    @include desktop{
+        margin-top:40px;
+        left:85%;
+    }
+}
+.validation-alert{
+    visibility: hidden;
+    @include ipad{
+        margin-bottom:20px;
+        margin-top:-20px;
+    } 
+
+}
